@@ -28,4 +28,8 @@
 		<module>application</module>
 		<module>core</module>
 	</modules>
+	<url>https://devaz.dev/</url>
+	<organization>
+		<name>Chat Nabucodonosor</name>
+	</organization>
 </project>

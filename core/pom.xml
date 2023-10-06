@@ -8,5 +8,5 @@
 		<version>${revision}</version>
 	</parent>
 	<artifactId>core</artifactId>
-	<description></description>
+	
 </project>
