@@ -27,6 +27,8 @@
 	<modules>
 		<module>application</module>
 		<module>core</module>
+		<module>port</module>
+		<module>adapter</module>
 	</modules>
 	<url>https://devaz.dev/</url>
 	<organization>
