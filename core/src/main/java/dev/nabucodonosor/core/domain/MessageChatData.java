@@ -7,13 +7,15 @@ import java.time.LocalDateTime;
  * 
  * 
  * @author RodrigoVazOliveira <br />
- * @param sender  who send message
- * @param message to is sending
+ * @param sender  who it will be sending message
+ * @param to      who it will be receive message sent
+ * @param message content message to sent
  * @param date    time to sent message
  * 
- * @return Objects MessageChatData
+ * 
+ * @version 0.0.1
  *
  */
-public record MessageChatData(String sender, String message, LocalDateTime dateTimeSent) {
+public record MessageChatData(String sender, String to, String message, LocalDateTime dateTimeSent) {
 
 }
