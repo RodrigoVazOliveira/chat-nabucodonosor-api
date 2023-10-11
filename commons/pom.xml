@@ -7,29 +7,18 @@
 		<artifactId>chat-nabudonosor</artifactId>
 		<version>${revision}</version>
 	</parent>
-	<artifactId>core</artifactId>
+	<artifactId>commons</artifactId>
+
 
 	<dependencies>
 		<dependency>
-			<groupId>dev.nabucodonosor</groupId>
-			<artifactId>port</artifactId>
-			<version>${revision}</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.nabucodonosor</groupId>
-			<artifactId>commons</artifactId>
-			<version>${revision}</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
 
-		</dependency>
-		<dependency>
-			<groupId>jakarta.validation</groupId>
-			<artifactId>jakarta.validation-api</artifactId>
-		</dependency>
-		
 	</dependencies>
 </project>

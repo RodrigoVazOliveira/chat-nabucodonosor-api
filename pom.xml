@@ -25,6 +25,7 @@
 	</properties>
 
 	<modules>
+		<module>commons</module>
 		<module>core</module>
 		<module>port</module>
 		<module>adapter</module>
