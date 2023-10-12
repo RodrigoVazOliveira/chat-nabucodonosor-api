@@ -10,12 +10,12 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 
 @Configuration
 @EnableWebSocketMessageBroker
-public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer {
+class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer {
 	private final static Logger LOGGER = LoggerFactory.getLogger(WebSocketConfiguration.class);
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry stompEndpointRegistry) {
-		LOGGER.info("configurando endpoint");
+		LOGGER.info("configuring endpoint to web socket");
 		stompEndpointRegistry.addEndpoint("/chat");
 	}
 
@@ -23,8 +23,7 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
 	public void configureMessageBroker(MessageBrokerRegistry messageBrokerRegistry) {
 		messageBrokerRegistry.enableSimpleBroker("/topic");
 		messageBrokerRegistry.setApplicationDestinationPrefixes("/");
-
-		LOGGER.info("configurando endpoint");
+		LOGGER.info("registred broker messages");
 	}
 
 }

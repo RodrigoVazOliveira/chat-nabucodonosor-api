@@ -1,4 +1,4 @@
-package dev.nabucodonosor.chat.core.adapterinbound.rest;
+package dev.nabucodonosor.chat.core.adapterinbound.socket;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,9 +28,8 @@ public class ChatMessagePortInboundAdapter implements SendMessagePortInbound {
 	@SendTo("/topic/public")
 	public ChatMessageData execute(@Payload @Valid final ChatMessageDataRequest chatMessageDataRequest) {
 		LOGGER.info("Sending message");
-		LOGGER.info("chatMessageDataRequest: {}", chatMessageDataRequest);
+		LOGGER.info("chatMessageDataRequest: {}", chatMessageDataRequest.toJson());
 
 		return chatMessageDataMapper.execute(chatMessageDataRequest);
 	}
-
 }
