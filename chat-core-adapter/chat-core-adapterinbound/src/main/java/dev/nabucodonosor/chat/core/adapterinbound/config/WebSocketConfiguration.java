@@ -16,7 +16,7 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry stompEndpointRegistry) {
 		LOGGER.info("configurando endpoint");
-		stompEndpointRegistry.addEndpoint("/chat").withSockJS();
+		stompEndpointRegistry.addEndpoint("/chat");
 	}
 
 	@Override
