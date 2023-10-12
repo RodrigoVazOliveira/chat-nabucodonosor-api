@@ -12,9 +12,12 @@
 
 	<groupId>dev.nabucodonosor</groupId>
 	<artifactId>chat-core</artifactId>
-	<version>${revision}</version>
 	<name>chat-core</name>
+	<version>${revision}</version>
+
 	<description>Chat nabucodonosor core</description>
+	<packaging>pom</packaging>
+
 	<properties>
 		<java.version>21</java.version>
 		<maven.compiler.source>21</maven.compiler.source>
@@ -26,4 +29,10 @@
 	<organization>
 		<name>Chat Nabucodonosor</name>
 	</organization>
+	<modules>
+		<module>chat-core-port</module>
+		<module>chat-core-adapter</module>
+		<module>chat-core-application</module>
+		<module>chat-core-build</module>
+	</modules>
 </project>
