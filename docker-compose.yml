@@ -10,6 +10,7 @@ services:
       POSTGRES_DB: chat_core
     networks:
       - application
+      
   application_chat_core:
     build: .
     container_name: application_chat_core

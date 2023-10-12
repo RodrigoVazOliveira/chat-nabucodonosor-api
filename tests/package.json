@@ -11,6 +11,7 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@stomp/stompjs": "^7.0.0",
+    "prompt-sync": "^4.2.0",
     "run": "^1.4.0",
     "ws": "^8.14.2"
   }

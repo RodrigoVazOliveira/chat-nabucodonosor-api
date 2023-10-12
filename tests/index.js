@@ -1,11 +1,12 @@
 var ws = require('ws');
 const stompJs = require('@stomp/stompjs');
+const prompt = require('prompt-sync')();
 
 const client = new stompJs.Client({
     brokerURL: 'ws://localhost:8080/chat',
-    debug: (str) => {
-        console.log(str);
-    },
+    // debug: (str) => {
+    //     console.log(str);
+    // },
     webSocketFactory: () => {
         return new ws('ws://localhost:8080/chat');
     },
@@ -15,27 +16,7 @@ const client = new stompJs.Client({
     logRawCommunication: true
 });
 
-client.onConnect = (frame) => {
-    console.info('Conection in ' + frame);
-    client.publish({
-        destination: '/send',
-        body: JSON.stringify({
-            sender: 'Rodrigo@gmail.com',
-            message: 'Essa e minha mensagem de testes'
-        })
-    });
-
-    client.subscribe('/topic/public', (message) => {
-        console.info('Resultado: ' + message);
-    });
-};
-
-
 client.onStompError = function (frame) {
-    // Will be invoked in case of error encountered at Broker
-    // Bad login/passcode typically will cause an error
-    // Complaint brokers will set `message` header with a brief message. Body may contain details.
-    // Compliant brokers will terminate the connection after any error
     console.log('Broker reported error: ' + frame.headers['message']);
     console.log('Additional details: ' + frame.body);
 };
@@ -44,7 +25,30 @@ client.onWebSocketError = (error) => {
     console.error("Error in websocket " + JSON.stringify(error));
 };
 
+client.onConnect = (frame) => {
+    
+    let runningProgram = true;
+
+    while (runningProgram) {
+        let option;
+        option = prompt("deseja enviar uma mensagem? (s, n) ");
+
+        if (option == 's') {
+            let sender = prompt('Por favor, digite o destinátario: ');
+            let message = prompt('Por favor, digite a mensagem: ');
+        
+            client.publish({
+                destination: '/send',
+                body: JSON.stringify({
+                    sender: sender,
+                    message: message
+                })
+            });
+        } else {
+            runningProgram = false;
+        }
+    }
+
+}
+
 client.activate();
-
-
-
