@@ -11,11 +11,10 @@
 	</parent>
 
 	<groupId>dev.nabucodonosor</groupId>
-	<artifactId>chat-nabudonosor</artifactId>
+	<artifactId>chat-core</artifactId>
 	<version>${revision}</version>
-	<name>chat-nabudonosor</name>
-	<description>Chat nabucodonosor</description>
-	<packaging>pom</packaging>
+	<name>chat-core</name>
+	<description>Chat nabucodonosor core</description>
 	<properties>
 		<java.version>21</java.version>
 		<maven.compiler.source>21</maven.compiler.source>
@@ -23,14 +22,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<revision>0.0.1-SNAPSHOT</revision>
 	</properties>
-
-	<modules>
-		<module>commons</module>
-		<module>core</module>
-		<module>port</module>
-		<module>adapter</module>
-		<module>application</module>
-	</modules>
 	<url>https://devaz.dev/</url>
 	<organization>
 		<name>Chat Nabucodonosor</name>
