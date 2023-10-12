@@ -5,5 +5,13 @@
     <artifactId>chat-core-application</artifactId>
     <version>${revision}</version>
   </parent>
-  <artifactId>chat-core-aplication-domain</artifactId>
+  <artifactId>chat-core-application-domain</artifactId>
+  
+  <dependencies>
+	  <dependency>
+		  <groupId>dev.nabucodonosor</groupId>
+		  <artifactId>chat-core-application-commons</artifactId>
+		  <version>${revision}</version>
+	  </dependency>
+  </dependencies>
 </project>
