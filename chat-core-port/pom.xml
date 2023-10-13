@@ -23,4 +23,11 @@
 		<module>chat-core-portinbound</module>
 		<module>chat-core-portoutbound</module>
 	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>dev.nabucodonosor</groupId>
+			<artifactId>chat-core-application-domain</artifactId>
+			<version>${revision}</version>
+		</dependency>
+	</dependencies>
 </project>

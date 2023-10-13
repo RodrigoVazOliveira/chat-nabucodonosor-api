@@ -2,13 +2,15 @@ var ws = require('ws');
 const stompJs = require('@stomp/stompjs');
 const prompt = require('prompt-sync')();
 
+const BASE_URL = 'ws://localhost:8080/ws';
+
 const client = new stompJs.Client({
-    brokerURL: 'ws://localhost:8080/chat',
-    // debug: (str) => {
-    //     console.log(str);
-    // },
+    brokerURL: BASE_URL,
+    debug: (str) => {
+        console.log(str);
+    },
     webSocketFactory: () => {
-        return new ws('ws://localhost:8080/chat');
+        return new ws(BASE_URL);
     },
     reconnectDelay: 5000,
     heartbeatIncoming: 4000,
@@ -38,7 +40,7 @@ client.onConnect = (frame) => {
             let message = prompt('Por favor, digite a mensagem: ');
         
             client.publish({
-                destination: '/send',
+                destination: '/app/chat.message',
                 body: JSON.stringify({
                     sender: sender,
                     message: message
@@ -48,7 +50,6 @@ client.onConnect = (frame) => {
             runningProgram = false;
         }
     }
-
 }
 
 client.activate();

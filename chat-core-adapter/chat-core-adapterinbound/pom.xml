@@ -37,5 +37,10 @@
 			<artifactId>chat-core-portinbound</artifactId>
 			<version>${revision}</version>
 		</dependency>
+		<dependency>
+			<groupId>dev.nabucodonosor</groupId>
+			<artifactId>chat-core-portoutbound</artifactId>
+			<version>${revision}</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -31,5 +31,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>dev.nabucodonosor</groupId>
+			<artifactId>chat-core-portoutbound</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>dev.nabucodonosor</groupId>
+			<artifactId>chat-core-application-commons</artifactId>
+			<version>${revision}</version>
+		</dependency>
 	</dependencies>
 </project>

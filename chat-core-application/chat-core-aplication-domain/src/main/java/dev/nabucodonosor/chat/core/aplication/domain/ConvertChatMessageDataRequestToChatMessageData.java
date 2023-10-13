@@ -8,7 +8,7 @@ public class ConvertChatMessageDataRequestToChatMessageData implements Mapper<Ch
 
 	@Override
 	public ChatMessageData execute(ChatMessageDataRequest chatMessageDataRequest) {
-		return new ChatMessageData(chatMessageDataRequest.sender(), chatMessageDataRequest.message(),
+		return new ChatMessageData(null, chatMessageDataRequest.sender(), chatMessageDataRequest.message(),
 				LocalDateTime.now());
 	}
 

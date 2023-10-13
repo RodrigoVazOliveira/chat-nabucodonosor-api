@@ -18,15 +18,14 @@ public class ChatMessagePortInboundAdapter implements SendMessagePortInbound {
 	private final static Logger LOGGER = LoggerFactory.getLogger(ChatMessagePortInboundAdapter.class);
 	private final ConvertChatMessageDataRequestToChatMessageData chatMessageDataMapper;
 
-	public ChatMessagePortInboundAdapter(
-			ConvertChatMessageDataRequestToChatMessageData convertChatMessageDataRequestToChatMessageData) {
-		this.chatMessageDataMapper = convertChatMessageDataRequestToChatMessageData;
+	public ChatMessagePortInboundAdapter(ConvertChatMessageDataRequestToChatMessageData chatMessageDataMapper) {
+		this.chatMessageDataMapper = chatMessageDataMapper;
 	}
 
 	@Override
-	@MessageMapping("/send")
-	@SendTo("/topic/public")
-	public ChatMessageData execute(@Payload @Valid final ChatMessageDataRequest chatMessageDataRequest) {
+	@MessageMapping("chat.message")
+	@SendTo("/topic/chat.receive")
+	public ChatMessageData sendMessage(@Payload @Valid final ChatMessageDataRequest chatMessageDataRequest) {
 		LOGGER.info("Sending message");
 		LOGGER.info("chatMessageDataRequest: {}", chatMessageDataRequest.toJson());
 
